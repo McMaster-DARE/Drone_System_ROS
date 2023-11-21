@@ -1,0 +1,8 @@
+prefix=/home/daniel/ydlidar_ws/install
+
+Name: laser2PC
+Description: Description of laser2PC
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
