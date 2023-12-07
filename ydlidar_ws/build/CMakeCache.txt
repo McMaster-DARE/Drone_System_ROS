@@ -20,6 +20,12 @@ BUILD_GMOCK:BOOL=ON
 //Build dynamically-linked binaries
 BUILD_SHARED_LIBS:BOOL=ON
 
+//Value Computed by CMake
+CANARY_driver_BINARY_DIR:STATIC=/home/daniel/ydlidar_ws/build/CANARY_driver
+
+//Value Computed by CMake
+CANARY_driver_SOURCE_DIR:STATIC=/home/daniel/ydlidar_ws/src/CANARY_driver
+
 //List of ';' separated packages to exclude
 CATKIN_BLACKLIST_PACKAGES:STRING=
 
@@ -399,6 +405,12 @@ actionlib_DIR:PATH=/opt/ros/noetic/share/actionlib/cmake
 //The directory containing a CMake configuration file for actionlib_msgs.
 actionlib_msgs_DIR:PATH=/opt/ros/noetic/share/actionlib_msgs/cmake
 
+//Value Computed by CMake
+canary_ros_driver_BINARY_DIR:STATIC=/home/daniel/ydlidar_ws/build/canary_ros_driver
+
+//Value Computed by CMake
+canary_ros_driver_SOURCE_DIR:STATIC=/home/daniel/ydlidar_ws/src/canary_ros_driver
+
 //The directory containing a CMake configuration file for catkin.
 catkin_DIR:PATH=/opt/ros/noetic/share/catkin/cmake
 
@@ -698,7 +710,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

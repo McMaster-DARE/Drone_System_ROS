@@ -131,6 +131,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/daniel/ydlidar_ws/build/gtest/cmake_install.cmake")
+  include("/home/daniel/ydlidar_ws/build/canary_ros_driver/cmake_install.cmake")
   include("/home/daniel/ydlidar_ws/build/laser2PC/cmake_install.cmake")
   include("/home/daniel/ydlidar_ws/build/ydlidar_ros_driver/cmake_install.cmake")
 

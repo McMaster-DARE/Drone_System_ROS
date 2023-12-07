@@ -1,0 +1,8 @@
+prefix=/home/daniel/ydlidar_ws/devel
+
+Name: CANARY_driver
+Description: Description of CANARY_driver
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
