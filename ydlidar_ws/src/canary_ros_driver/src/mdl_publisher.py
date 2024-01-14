@@ -8,7 +8,7 @@ import adafruit_lis3mdl
 
 def mdl_publisher():
     # Initialize the ROS publisher for the 'mdl_topic' with Float32 messages
-    pub = rospy.Publisher('rad_topic', Float32, queue_size=10)
+    pub = rospy.Publisher('mdl_topic', Float32, queue_size=10)
     
     # Initialize the ROS node as 'mdl_publisher' and allow multiple nodes with the same name
     rospy.init_node('mdl_publisher', anonymous=True)
