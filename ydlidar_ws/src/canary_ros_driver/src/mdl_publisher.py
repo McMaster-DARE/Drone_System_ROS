@@ -1,14 +1,13 @@
 #!/usr/bin/env python
 import rospy
-from std_msgs.msg 
-import Float32
+from std_msgs.msg import Float32MultiArray
 import time
 import board
 import adafruit_lis3mdl
 
 def mdl_publisher():
     # Initialize the ROS publisher for the 'mdl_topic' with Float32 messages
-    pub = rospy.Publisher('rad_topic', Float32, queue_size=10)
+    pub = rospy.Publisher('mdl_topic', Float32MultiArray, queue_size=10)
     
     # Initialize the ROS node as 'mdl_publisher' and allow multiple nodes with the same name
     rospy.init_node('mdl_publisher', anonymous=True)
@@ -27,12 +26,14 @@ def mdl_publisher():
     while not rospy.is_shutdown():
         # Read the magnetic field values from the LIS3MDL sensor
         mag_x, mag_y, mag_z = sensor.magnetic
-        
+
         # Log the temperature to the console for debugging
-        rospy.loginfo("X:{0:10.2f}, Y:{1:10.2f}, Z:{2:10.2f} uT".format(mag_x, mag_y, mag_z))
+        rospy.loginfo("X:{0:10.2f}, Y:{1:10.2f}, Z:{2:10.2f} uT".format(mag_x, mag_y, mag_z) )
+        
+        mag_data = Float32MultiArray(data=[mag_x, mag_y, mag_z])
         
         # Publish only the numerical temperature value to the 'temp_topic'
-        pub.publish(mag_x, mag_y, mag_z)
+        pub.publish(mag_data)
 
         rate.sleep()
 
