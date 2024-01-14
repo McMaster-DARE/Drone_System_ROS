@@ -1,0 +1,8 @@
+prefix=/home/pi/Desktop/DARE_ROS/project_ws/devel
+
+Name: canary_lidar
+Description: Description of canary_lidar
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

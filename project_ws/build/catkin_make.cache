@@ -1,0 +1,2 @@
+canary_lidar:canary_sensors:ydlidar_ros_driver
+-DCATKIN_DEVEL_PREFIX=/home/pi/Desktop/DARE_ROS/project_ws/devel -DCMAKE_INSTALL_PREFIX=/home/pi/Desktop/DARE_ROS/project_ws/install -G Unix Makefiles

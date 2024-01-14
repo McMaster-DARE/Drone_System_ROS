@@ -1,0 +1,3 @@
+[submodule "project_ws/YDLidar-SDK"]
+	path = project_ws/YDLidar-SDK
+	url = https://github.com/YDLIDAR/YDLidar-SDK

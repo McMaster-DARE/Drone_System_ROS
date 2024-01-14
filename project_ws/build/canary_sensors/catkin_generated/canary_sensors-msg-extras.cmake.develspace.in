@@ -1,0 +1,2 @@
+set(canary_sensors_MESSAGE_FILES "")
+set(canary_sensors_SERVICE_FILES "")
