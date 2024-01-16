@@ -1,8 +1,0 @@
-prefix=/home/pi/Desktop/DARE_ROS/project_ws/install
-
-Name: canary_sensors
-Description: Description of canary_sensors
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
