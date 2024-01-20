@@ -4,9 +4,6 @@
 [submodule "project_ws/src/ydlidar_ros_driver"]
 	path = project_ws/src/ydlidar_ros_driver
 	url = https://github.com/YDLIDAR/ydlidar_ros_driver
-[submodule "src/include/ydlidar_ros_driver"]
-	path = src/include/ydlidar_ros_driver
-	url = https://github.com/YDLIDAR/ydlidar_ros_driver
 [submodule "src/drivers/ydlidar_ros_driver"]
 	path = src/drivers/ydlidar_ros_driver
 	url = https://github.com/YDLIDAR/ydlidar_ros_driver
