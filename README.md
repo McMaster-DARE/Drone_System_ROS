@@ -15,7 +15,7 @@
 * Prints the formatted magnetic field values to the console once per second.
 * Publishes continuous LIS3MDL magnetometer readings (X, Y,Z) to 'mdl_topic' using ROS at a rate.
 
-## 'TMP117.py' (Magnetometer)
+## 'TMP117.py' and 'temp_publisher.py' (Magnetometer)
 * Uses the Adafruit TMP117 library to interact with the TMP117 temperature sensor.
 * Monitors the temperature readings from the sensor.
 * Integrates a simple recording functionality triggered by a push button, logging time and temperature to a file ("myfile.txt") when the button is pressed.
