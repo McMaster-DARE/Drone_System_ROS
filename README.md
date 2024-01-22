@@ -1,6 +1,6 @@
 # DARE_ROS
 
-#### This project provides Python scripts for reading data from different sensors on a Raspberry Pi and then publishing that information onto ROS topics. The supported sensors include a Radiation sensor, a Magnetometer, and a Temperature sensor. These scripts enable the retrieval of sensor data, allowing seamless integration into various projects.
+#### This project provides Python scripts that read data from different sensors on a Raspberry Pi and then publish that information onto ROS topics. The supported sensors include a Radiation sensor, a Magnetometer, and a Temperature sensor. These scripts enable the retrieval of sensor data, allowing seamless integration into various projects.
 
 ## 'RadSens.py' and 'rad_publisher.py' (Radiation Sensor)
 * Converts the CG_RadSens library to CircuitPython for use on a Raspberry Pi Pico.
