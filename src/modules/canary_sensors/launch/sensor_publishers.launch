@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- Launch mdl_publisher node -->
+    <node pkg="canary_sensors" type="mdl_publisher.py" name="mdl_publisher_node" output="screen">
+    </node>
+
+    <!-- Launch rad_publisher node -->
+    <node pkg="canary_sensors" type="rad_publisher.py" name="rad_publisher_node" output="screen">
+    </node>
+
+    <!-- Launch temp_publisher node -->
+    <node pkg="canary_sensors" type="temp_publisher.py" name="temp_publisher_node" output="screen">
+    </node>
+</launch>
+
+<!-- 
+    To RUN this launch file: 
+    
+    roslaunch canary_sensors sensors.launch
+-->
