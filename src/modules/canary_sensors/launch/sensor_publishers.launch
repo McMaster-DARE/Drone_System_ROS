@@ -1,16 +1,35 @@
 <?xml version="1.0"?>
 <launch>
-    <!-- Launch mdl_publisher node -->
+    <!-- Launch sensor nodes -->
     <node pkg="canary_sensors" type="mdl_publisher.py" name="mdl_publisher_node" output="screen">
     </node>
 
-    <!-- Launch rad_publisher node -->
     <node pkg="canary_sensors" type="rad_publisher.py" name="rad_publisher_node" output="screen">
     </node>
 
-    <!-- Launch temp_publisher node -->
     <node pkg="canary_sensors" type="temp_publisher.py" name="temp_publisher_node" output="screen">
     </node>
+
+    <node pkg="canary_sensors" type="IMU_publisher.py" name="imu_publisher_node" output="screen">
+    </node>
+
+    <!-- Record data from sensor nodes -->
+    <node name="record_mdl_data" pkg="rosbag" type="record" 
+          args="-O ../rosbags/mdl_data.bag /mdl_topic" output="screen">
+    </node>
+
+    <node name="record_rad_data" pkg="rosbag" type="record" 
+          args="-O ../rosbags/rad_data.bag /rad_topic" output="screen">
+    </node>
+
+    <node name="record_temp_data" pkg="rosbag" type="record" 
+          args="-O ../rosbags/temp_data.bag /temp_topic" output="screen">
+    </node>
+
+    <node name="record_imu_data" pkg="rosbag" type="record" 
+          args="-O ../rosbags/imu_data.bag /accelerometer_topic /gyro_topic /grav_topic" output="screen">
+    </node>
+
 </launch>
 
 <!-- 
