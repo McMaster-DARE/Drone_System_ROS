@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- Launch sensor nodes -->
+    <node pkg="canary_pose" type="IMU_publisher.py" name="IMU_publisher_node" output="screen">
+    </node>
+
+</launch>
