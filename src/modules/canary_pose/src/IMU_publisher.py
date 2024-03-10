@@ -16,7 +16,7 @@ def create_vector3(p):
 
 def IMU_publisher():
     # Initialize the ROS publisher for the 'IMU_topic' with Imu messages
-    imu_pub = rospy.Publisher('/imu', Imu, queue_size=10)
+    imu_pub = rospy.Publisher('/imu/data', Imu, queue_size=10)
     
     # Initialize the ROS node as 'IMU_publisher' and allow multiple nodes with the same name
     rospy.init_node('IMU_publisher', anonymous=True)
@@ -53,7 +53,7 @@ def IMU_publisher():
         
         
         i.header.stamp = rospy.Time.now()
-        i.header.frame_id = ''
+        i.header.frame_id = 'imu_frame'
         i.orientation = Quaternion(q[0], q[1], q[2], q[3])
         i.angular_velocity = create_vector3(gy)
         i.linear_acceleration = create_vector3(acc)
