@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- Launch rviz  -->
+    <node name="rviz" pkg="rviz" type="rviz" 
+    		args="-d $(find canary_lidar)/config/lidar.rviz" />
+
+</launch>
+
