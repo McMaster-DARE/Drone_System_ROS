@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="bag_file_name" default="imu_scan_data"/>
+
+    <arg name="topic" default="/imu/data"/>
+
+    <node name="rosbag_record" pkg="rosbag" type="record" args="-O $(find canary_pose)/rosbag/$(arg bag_file_name).bag $(arg topic)" output="screen"/>
+</launch>
