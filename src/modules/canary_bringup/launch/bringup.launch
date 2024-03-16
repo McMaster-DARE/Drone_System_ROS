@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<launch>
+   <!-- Start Lidar Scanning-->
+   <include file="$(find canary_lidar)/launch/ydlidar.launch" />
+   
+   <!-- Start Sensors -->
+   <include file="$(find canary_sensors)/launch/sensor_publishers.launch" />
+   
+   <!-- Start IMU -->
+   <include file="$(find canary_pose)/launch/imu_publisher.launch" />
+   
+</launch>
