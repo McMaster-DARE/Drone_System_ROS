@@ -4,5 +4,5 @@
 
     <arg name="topic" default="/imu/data"/>
 
-    <node name="rosbag_record" pkg="rosbag" type="record" args="-O $(find canary_pose)/rosbag/$(arg bag_file_name).bag $(arg topic)" output="screen"/>
+    <node name="rosbag_imu_record" pkg="rosbag" type="record" args="-O $(find canary_pose)/rosbag/$(arg bag_file_name).bag $(arg topic)" output="screen"/>
 </launch>

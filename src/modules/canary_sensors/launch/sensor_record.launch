@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
     <!-- Record all sensor data from sensor nodes into one bag file-->
-    <node pkg="rosbag" type="record" name="rosbag_sensor_data"
+    <node pkg="rosbag" type="record" name="rosbag_sensor_record"
           args="record -O $(find canary_sensors)/rosbag/sensor_data.bag /mdl_topic /rad_topic /temp_topic" output="screen"> 
     </node>
 </launch>

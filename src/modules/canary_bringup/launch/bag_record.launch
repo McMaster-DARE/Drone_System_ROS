@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<launch>
+   <!-- Start all nodes -->
+   <include file="$(find canary_bringup)/launch/bringup.launch" />
+   
+   <!-- Record Sensor nodes -->
+   <include file="$(find canary_sensors)/launch/sensor_record.launch" />
+   
+   <!-- Record Lidar node -->
+   <include file="$(find canary_lidar)/launch/lidar_record.launch" />
+   
+   <!-- Record Imu node -->
+   <include file="$(find canary_pose)/launch/imu_record.launch" />
+   
+</launch>
