@@ -12,8 +12,8 @@ catkin_package(
   CATKIN_DEPENDS message_runtime rospy std_msgs
 )
 catkin_package(
-  #INCLUDE_DIRS include
-  #LIBRARIES canary_sensors
+  INCLUDE_DIRS include
+  LIBRARIES canary_sensors
   #CATKIN_DEPENDS rospy std_msgs
   #DEPENDS system_lib
 )
