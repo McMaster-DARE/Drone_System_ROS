@@ -23,7 +23,6 @@ catkin_install_python(PROGRAMS
   src/mdl_publisher.py
   src/rad_publisher.py
   src/IMU_publisher.py
-  src/test.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
 
