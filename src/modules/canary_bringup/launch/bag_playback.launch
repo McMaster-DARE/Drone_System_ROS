@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 
 <launch>
-   <arg name = "lidar_file" default = "$(find canary_lidar)/rosbag/lidar_scan_data"/>
-   <arg name = "sensor_file" default = "$(find canary_sensors)/rosbag/sensor_data"/>
-   <arg name = "pose_file" default = "$(find canary_pose)/rosbag/imu_scan_data"/>
+   <arg name = "lidar_file" default = "$(find canary_lidar)/rosbag/lidar_scan_data">
+   <arg name = "sensor_file" default = "$(find canary_sensors)/rosbag/sensor_data">
+   <arg name = "pose_file" default = "$(find canary_pose)/rosbag/imu_scan_data">
    
-   <node pkg = "rosbag" type = "play" name = "player" output = "screen" args = "--clock -l $(arg lidar_file).bag $(arg sensor_file).bag $(arg pose_file).bag"/>
+   <node pkg = "rosbag" type = "play" name = "player" output = "screen" args = "--clock $(arg lidar_file).bag $(arg sensor_file).bag $(arg pose_file).bag"/>
    
 </launch>
