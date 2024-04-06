@@ -1,0 +1,2 @@
+canary_lidar:cartographer:cartographer_ros/cartographer_ros:cartographer_ros/cartographer_ros_msgs:cartographer_ros/cartographer_rviz
+-G Unix Makefiles -DCATKIN_DEVEL_PREFIX=/home/vboxuser/Downloads/DARE_ROS/catkin_ws/devel_isolated -DCMAKE_INSTALL_PREFIX=/home/vboxuser/Downloads/DARE_ROS/catkin_ws/install_isolated

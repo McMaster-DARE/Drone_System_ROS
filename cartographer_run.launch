@@ -1,0 +1,50 @@
+<!-- 
+  Main Cartographer launch file
+  
+  Used to:
+
+  1- Load the Lua configuration file
+  2- Specify the robot's URDF file
+  3- Start the Cartographer node to begin SLAM
+  4- Broadcast static transforms from the URDF file if provided
+  5- Start RViz for visualization
+  6- Play the specified bag file
+
+  -->
+
+<launch>
+  <!-- Load the Lua configuration file -->
+  <arg name="configuration_directory" default="/src/modules/$(find your_package_name)/config/"/>
+  <arg name="configuration_basename" default="our_cartographer_config.lua"/>
+
+  <!-- Optional: Specify the robot's URDF file -->
+  <arg name="urdf_file" default="our_robot_urdf.urdf"/>
+
+  <!-- Bag file to use with Cartographer -->
+  <arg name="bag_filename" default="/src/modules/canary_lidar/rosbag/lidar_scan_data.bag"/>
+
+  <!-- Start the Cartographer node to begin SLAM -->
+  <node name="cartographer_node" pkg="cartographer_ros"
+        type="cartographer_node" output="screen">
+    <param name="use_sim_time" value="true"/>
+    <rosparam command="load" file="$(arg configuration_directory)$(arg configuration_basename)"/>
+    <!-- Include the URDF file if specified -->
+    <param name="robot_description" textfile="$(find our_package_name)/urdf/$(arg urdf_file)"/>
+  </node>
+
+  <!-- Broadcast static transforms from the URDF file if provided -->
+  <group if="$(eval len(urdf_file) > 0)">
+    <node name="robot_state_publisher" pkg="robot_state_publisher"
+          type="robot_state_publisher">
+      <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find your_package_name)/urdf/$(arg urdf_file)'"/>
+    </node>
+  </group>
+
+  <!-- Start RViz for visualization -->
+  <node name="rviz" pkg="rviz" type="rviz" required="true"
+        args="-d $(find your_package_name)/config/lidar.rviz"/>
+
+  <!-- Play the specified bag file -->
+  <node name="playbag" pkg="rosbag" type="play"
+        args="--clock $(arg bag_filename)" />
+</launch>

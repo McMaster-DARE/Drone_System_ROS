@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <launch>
-    <arg name="bag_file_name" default="lidar_scan_data"/>
+    <arg name="bag_file_name" default="lidar_scan_data1"/>
 
-    <arg name="topic" default="/scan"/>
+    <arg name="topic" default="/scan /tf"/>
 
     <node name="rosbag_lidar_record" pkg="rosbag" type="record" args="-O $(find canary_lidar)/rosbag/$(arg bag_file_name).bag $(arg topic)" output="screen"/>
 </launch>

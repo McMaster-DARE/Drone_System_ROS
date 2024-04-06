@@ -1,0 +1,8 @@
+prefix=/home/vboxuser/Downloads/DARE_ROS/catkin_ws/devel_isolated/canary_lidar
+
+Name: canary_lidar
+Description: Description of canary_lidar
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
