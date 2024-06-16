@@ -1,8 +1,6 @@
 <?xml version="1.0"?>
 
 <launch>
-   <!-- Start all nodes -->
-   <include file="$(find canary_bringup)/launch/bringup.launch" />
    
    <!-- Record Sensor nodes -->
    <include file="$(find canary_sensors)/launch/sensor_record.launch" />
