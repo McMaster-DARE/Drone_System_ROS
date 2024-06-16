@@ -2,7 +2,10 @@
 <launch>
     <arg name="bag_file_name" default="lidar_scan_data"/>
 
-    <arg name="topic" default="/scan"/>
+    <arg name="topic" default="/scan /tf"/>
+    
+    <!-- Launch X2 Lidar  -->
+    <include file="$(find canary_lidar)/launch/ydlidar.launch" />
 
     <node name="rosbag_lidar_record" pkg="rosbag" type="record" args="-O $(find canary_lidar)/rosbag/$(arg bag_file_name).bag $(arg topic)" output="screen"/>
 </launch>
