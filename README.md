@@ -19,7 +19,7 @@
 * Uses the Adafruit TMP117 library to interact with the TMP117 temperature sensor.
 * Monitors the temperature readings from the sensor.
 * Integrates a simple recording functionality triggered by a push button, logging time and temperature to a file ("myfile.txt") when the button is pressed.
-* Publishes continuous temperature readings in Celsius from a TMP117 sensor to 'temp_topic' using ROS.
+* Publishes continuous temperature readings in Celsius from a TMP117 sensor to 'temp_topic' using ROS
 
 
   
