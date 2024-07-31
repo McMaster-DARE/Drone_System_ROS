@@ -1,11 +1,23 @@
 <?xml version="1.0"?>
 <launch>
+    <!-- Define the default prefix for the bag file name -->
     <arg name="bag_file_name" default="lidar_scan_data"/>
-
+    
+    <!-- Define the topics to record from the LiDAR -->
     <arg name="topic" default="/scan /tf"/>
     
-    <!-- Launch X2 Lidar  -->
+    <!-- Generate a timestamp to ensure uniqueness -->
+    <!-- The command runs a shell command to generate the current date and time (with am and pm indicators) -->
+    <!-- Example: 28-07-2024_04h30m15_PM -->
+    <param name="timestamp" command="date +'%d-%m-%Y_%Ih%Mm%S_%p'"/>
+
+    <!-- Include another launch file to start the X2 LiDAR driver -->
     <include file="$(find canary_lidar)/launch/ydlidar.launch" />
 
-    <node name="rosbag_lidar_record" pkg="rosbag" type="record" args="-O $(find canary_lidar)/rosbag/$(arg bag_file_name).bag $(arg topic)" output="screen"/>
+    <!-- Record LiDAR data to a bag file with the timestamp in the filename -->
+    <node name="rosbag_lidar_record" pkg="rosbag" type="record"
+          args="-O $(find canary_lidar)/rosbag/$(arg bag_file_name)_$(param timestamp).bag $(arg topic)" 
+          output="screen"/>
+
+          <!-- Example bag file name: lidar_scan_data_28-07-2024_04h30m15_PM.bag -->
 </launch>
