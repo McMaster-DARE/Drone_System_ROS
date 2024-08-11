@@ -1,9 +1,17 @@
 <?xml version="1.0"?>
 <launch>
+    <!-- Include the sensor publishers launch file -->
     <include file="$(find canary_sensors)/launch/sensor_publishers.launch" />
     
-    <!-- Record all sensor data from sensor nodes into one bag file-->
+    <!-- Define the default prefix for the bag file name -->
+    <arg name="bag_file_name" default="sensor_data"/>
+
+    <!-- Generate a timestamp to ensure uniqueness -->
+    <arg name="timestamp" default="$(eval eval ('_' + '_import_' + '_(\'datetime\')').datetime.now().strftime('(%Y-%m-%d-%H:%M:%S)'))"/>
+
+    <!-- Record all sensor data from sensor nodes into one bag file -->
     <node pkg="rosbag" type="record" name="rosbag_sensor_record"
-          args="record -O $(find canary_sensors)/rosbag/sensor_data.bag /mdl_topic /rad_topic /temp_topic" output="screen"> 
+          args="record -O $(find canary_sensors)/rosbag/$(arg bag_file_name)_$(arg timestamp).bag /mdl_topic /rad_topic /temp_topic" 
+          output="screen"> 
     </node>
 </launch>
