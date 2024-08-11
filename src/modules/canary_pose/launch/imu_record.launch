@@ -1,13 +1,20 @@
 <?xml version="1.0"?>
 <launch>
+    <!-- Define the default prefix for the bag file name -->
     <arg name="bag_file_name" default="imu_scan_data"/>
 
+    <!-- Define the topics to record -->
     <arg name="topic" default="/imu"/>
-    
+
+    <!-- Generate a timestamp to ensure uniqueness -->
+    <arg name="timestamp" default="$(eval eval ('_' + '_import_' + '_(\'datetime\')').datetime.now().strftime('(%Y-%m-%d-%H:%M:%S)'))"/>
+
     <!-- Launch sensor nodes -->
     <node pkg="canary_pose" type="IMU_publisher.py" name="IMU_publisher_node" output="screen">
     </node>
 
-    <!-- Start recording bagfile -->
-    <node name="rosbag_imu_record" pkg="rosbag" type="record" args="-O $(find canary_pose)/rosbag/$(arg bag_file_name).bag $(arg topic)" output="screen"/>
+    <!-- Start recording bagfile with timestamp -->
+    <node name="rosbag_imu_record" pkg="rosbag" type="record" 
+          args="-O $(find canary_pose)/rosbag/$(arg bag_file_name)_$(arg timestamp).bag $(arg topic)" 
+          output="screen"/>
 </launch>
